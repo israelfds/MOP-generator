@@ -1,0 +1,24 @@
+# Ambiente
+.venv/
+venv/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Saídas geradas
+MOP_*.docx
+MOP_*.md
+
+# Locks de editor (LibreOffice/Word)
+.~lock.*#
+~$*.docx
+
+# Ferramentas
+.pytest_cache/
+*.egg-info/
+.mypy_cache/

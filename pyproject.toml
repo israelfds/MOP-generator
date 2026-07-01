@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mop-generator"
+version = "0.1.0"
+description = "CLI para gerar documentos MOP (Method of Procedure) a partir de um repositório Git."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "click>=8.1",
+    "PyYAML>=6.0",
+    "python-docx>=1.1.0",
+    "requests>=2.31",
+    "python-dotenv>=1.0",
+]
+
+[project.scripts]
+mop = "mop_generator.cli:cli"
+mop-ui = "mop_generator.ui:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]

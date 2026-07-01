@@ -1,0 +1,59 @@
+# Configuração OPCIONAL do MOP Generator.
+#
+# A ferramenta é agnóstica a empresa e focada na branch e nas modificações do
+# usuário. Todo o conteúdo técnico (objetivo, mudanças, impacto, backup,
+# validação, rollback) é inferido automaticamente da branch — via LLM quando
+# habilitado, ou dos commits quando não.
+#
+# Este arquivo serve apenas para valores que a ferramenta NÃO tem como saber a
+# partir do código: janela de deploy, links de PR e informações organizacionais
+# (responsáveis, time de plantão). Todos os campos são opcionais e o que não for
+# preenchido aparece como "A preencher" no documento (ou é perguntado no modo
+# interativo).
+
+# --- Identificação (opcional; derivados do repositório se omitidos) ---
+# title: "MOP Upgrade <derivado do nome do projeto>"
+# subtitle: "<derivado da mudança pelo LLM>"
+
+# --- Conteúdo técnico (normalmente NÃO preencher: vem da branch/LLM) ---
+# Preencha apenas se quiser sobrescrever o que é gerado automaticamente.
+# objetivo: ""
+# mudancas:
+#   - acao: ""        # ex.: Feature, Correção, Melhoria, Refatoração, DevOps
+#     descricao: ""
+#     notas: ""
+# impacto: []
+# plano_backup: ""
+# validacao: ""
+# rollback: ""
+
+# --- Informações que a ferramenta não tem como inferir do código ---
+
+# Janela de deploy
+upgrade_schedule: ""
+
+# Links de Pull Request usados em backup e rollback
+pull_requests: []
+
+# Execução (organizacional — opcional e agnóstico; preencha conforme seu processo)
+responsavel_tecnico:
+  empresa: ""
+  pessoas: []
+  # pessoas:
+  #   - nome: "Nome Sobrenome"
+  #     email: "nome@exemplo.com"
+
+day_after:
+  empresa: ""
+  papel: ""
+
+# Acesso ao repositório/DevOps. Se omitido, é derivado do remote da branch.
+acesso_devops: ""
+
+# --- Padronização / identidade visual (opcional) ---
+# Reaproveite entre gerações para um template corporativo consistente.
+branding:
+  logo_path: ""       # caminho para a imagem da logo (ex.: ./logo.png)
+  project_title: ""   # título do projeto (capa e cabeçalho). Se vazio, usa o nome do repo.
+  header_text: ""     # texto do cabeçalho (ex.: nome da empresa)
+  cover_title: ""     # capa da modificação. Se vazio, é gerado pela LLM.
